@@ -34,7 +34,7 @@ public class Car extends BaseEntity {
     private String trim;
 
     @Column(nullable = false)
-    private int year;
+    private int productionYear;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -106,8 +106,8 @@ public class Car extends BaseEntity {
     public String getTrim() { return trim; }
     public void setTrim(String trim) { this.trim = trim; }
 
-    public int getYear() { return year; }
-    public void setYear(int year) { this.year = year; }
+    public int getProductionYear() { return productionYear; }
+    public void setProductionYear(int year) { this.productionYear = year; }
 
     public BodyType getBodyType() { return bodyType; }
     public void setBodyType(BodyType bodyType) { this.bodyType = bodyType; }

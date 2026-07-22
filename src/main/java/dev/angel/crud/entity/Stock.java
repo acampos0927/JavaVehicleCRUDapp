@@ -1,7 +1,7 @@
 package dev.angel.crud.entity;
-import dev.angel.crud.entity.enums.Category;
+import dev.angel.crud.entity.enums.BodyType;
 
-import dev.angel.crud.entity.enums.EnergyRating;
+//import dev.angel.crud.entity.enums.EnergyRating;
 import jakarta.persistence.*;
 
 @Entity
@@ -27,16 +27,16 @@ public class Stock {
     @Column(name = "is_reserved")
     private boolean isReserved;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Category category = Category.ELECTRONICS;
-
-    @Enumerated(EnumType.STRING)
-    private EnergyRating  energyRating;
-
-    @OneToOne(optional = false)
-    @JoinColumn(name = "product_id", nullable = false)
-    private Vehicle product;
+//    @Enumerated(EnumType.STRING)
+//    @Column(nullable = false)
+//    private Category category = Category.ELECTRONICS;
+//
+//    @Enumerated(EnumType.STRING)
+//    private EnergyRating  energyRating;
+//
+//    @OneToOne(optional = false)
+//    @JoinColumn(name = "product_id", nullable = false)
+//    private Vehicle product;
 
     public Stock() {}
 
@@ -119,20 +119,20 @@ public class Stock {
         isReserved = reserved;
     }
 
-    public Vehicle getProduct() {
-        return product;
-    }
-
-    public void setProduct(Vehicle product) {
-        this.product = product;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public void setEnergyRating(EnergyRating energyRating) {
-        this.energyRating = energyRating;
-    }
+//    public Vehicle getProduct() {
+//        return product;
+//    }
+//
+//    public void setProduct(Vehicle product) {
+//        this.product = product;
+//    }
+//
+//    public void setCategory(Category category) {
+//        this.category = category;
+//    }
+//
+//    public void setEnergyRating(EnergyRating energyRating) {
+//        this.energyRating = energyRating;
+//    }
 
 }

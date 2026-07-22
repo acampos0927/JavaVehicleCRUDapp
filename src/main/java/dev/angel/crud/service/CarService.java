@@ -1,9 +1,7 @@
 package dev.angel.crud.service;
 
 import dev.angel.crud.entity.Car;
-import dev.angel.crud.entity.Stock;
 import dev.angel.crud.repos.CarRepository;
-import dev.angel.crud.repos.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +14,8 @@ public class CarService {
     @Autowired
     private CarRepository carRepository;
 
-    @Autowired
-    private StockRepository stockRepository;
+//    @Autowired
+//    private StockRepository stockRepository;
 
     public List<Car> getAllCars() {
         return carRepository.findAll();
@@ -40,7 +38,7 @@ public class CarService {
         car.setMake(carDetails.getMake());
         car.setModel(carDetails.getModel());
         car.setTrim(carDetails.getTrim());
-        car.setYear(carDetails.getYear());
+        car.setProductionYear(carDetails.getProductionYear());
         car.setBodyType(carDetails.getBodyType());
         car.setExteriorColor(carDetails.getExteriorColor());
         car.setInteriorColor(carDetails.getInteriorColor());
@@ -68,11 +66,11 @@ public class CarService {
         Car car = carRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Car not found with id: " + id));
 
-        Optional<Stock> stock = stockRepository.findByCarId(id);
-        stock.ifPresent(s -> {
-            s.setCar(null);
-            stockRepository.save(s);
-        });
+//        Optional<Stock> stock = stockRepository.findByCarId(id);
+//        stock.ifPresent(s -> {
+//            s.setCar(null);
+//            stockRepository.save(s);
+//        });
 
         carRepository.delete(car);
     }
